@@ -55,6 +55,7 @@ const root = '../'.repeat(depth);
 		--panel: #1c1e20;
 		--stamp: #c81e1e;
 		--stamp-dim: #9c1c1c;
+		--stamp-on-dark: #e0655a;
 		--rule: #d6d0c0;
 
 		--font-display: 'Anton', 'Arial Narrow', sans-serif;
@@ -111,7 +112,7 @@ const root = '../'.repeat(depth);
 		grid-column: 1;
 		font-family: var(--font-serif);
 		font-style: italic;
-		color: var(--stamp);
+		color: var(--stamp-on-dark);
 		margin: 0.5rem 0 0;
 		font-size: 0.95rem;
 	}
@@ -138,8 +139,13 @@ const root = '../'.repeat(depth);
 
 	.masthead nav a:hover,
 	.masthead nav a:focus-visible {
-		color: var(--stamp);
+		color: var(--stamp-on-dark);
 		opacity: 1;
+	}
+
+	.masthead nav a:focus-visible,
+	.nameplate:focus-visible {
+		outline-color: var(--stamp-on-dark);
 	}
 
 	@media (max-width: 520px) {
