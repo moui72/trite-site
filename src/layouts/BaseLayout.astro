@@ -5,13 +5,20 @@ interface Props {
 }
 
 const { title, description = 'Trite Site — the greatest website of all time.' } = Astro.props;
+
+// Relative path back to the site root from the current page, e.g. "" at "/",
+// "../" at "/about/", "../../" at "/blog/x/". Keeps every internal link
+// relative so the site works both under a subpath (github.io/trite-site/)
+// and at the eventual apex domain (trite.site/), with no base config needed.
+const depth = Astro.url.pathname.split('/').filter(Boolean).length;
+const root = '../'.repeat(depth);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={`${root}favicon.svg`} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
@@ -19,10 +26,10 @@ const { title, description = 'Trite Site — the greatest website of all time.' 
 	</head>
 	<body>
 		<header class="site-header">
-			<a class="brand" href="/">Trite Site</a>
+			<a class="brand" href={root || '.'}>Trite Site</a>
 			<nav>
-				<a href="/">Home</a>
-				<a href="/about/">About</a>
+				<a href={root || '.'}>Home</a>
+				<a href={`${root}about/`}>About</a>
 			</nav>
 		</header>
 		<main>
