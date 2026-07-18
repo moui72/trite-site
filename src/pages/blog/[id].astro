@@ -1,0 +1,80 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} — Trite Site`}>
+	<article>
+		<header>
+			<h1>{post.data.title}</h1>
+			<time datetime={post.data.pubDate.toISOString()}>
+				{post.data.pubDate.toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+					timeZone: 'UTC',
+				})}
+			</time>
+			{
+				post.data.tags.length > 0 && (
+					<ul class="tags">
+						{post.data.tags.map((tag) => <li>{tag}</li>)}
+					</ul>
+				)
+			}
+		</header>
+		<div class="prose">
+			<Content />
+		</div>
+	</article>
+	<p class="back"><a href="/">&larr; Back to all posts</a></p>
+</BaseLayout>
+
+<style>
+	article header {
+		margin-bottom: 2rem;
+		border-bottom: 1px solid #ddd6c7;
+		padding-bottom: 1rem;
+	}
+
+	article time {
+		display: block;
+		color: #6b6459;
+		font-size: 0.9rem;
+		margin-top: 0.25rem;
+	}
+
+	.tags {
+		list-style: none;
+		display: flex;
+		gap: 0.5rem;
+		padding: 0;
+		margin: 0.75rem 0 0;
+		flex-wrap: wrap;
+	}
+
+	.tags li {
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: #b3401e;
+		border: 1px solid #b3401e;
+		padding: 0.15rem 0.5rem;
+		border-radius: 3px;
+	}
+
+	.back {
+		margin-top: 3rem;
+	}
+</style>
