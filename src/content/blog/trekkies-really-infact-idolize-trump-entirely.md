@@ -10,15 +10,15 @@ You may or may not have heard about the recent decision by a number of [members 
 
 Trump/Talaxian comparison
 
-1. Just as James T. Kirk once strove to prevent Khan from using the terraforming power of the [Genesis Device](https://web.archive.org/web/20180902071808/http://memory-alpha.wikia.com/wiki/Genesis_Device "Genesis Device on Memory Alpha") in*The Wrath of Khan*, Donald also doesnâ€™t believe in [human-caused climate change](http://www.cnn.com/2016/09/27/politics/donald-trump-climate-change-kellyanne-conway/ "Trump on climate change").
-2. Donald is obviously a real-life [Talaxian](https://web.archive.org/web/20180902071808/http://memory-alpha.wikia.com/wiki/Talaxian "Talaxians on Memory Alpha").
+1. Just as James T. Kirk once strove to prevent Khan from using the terraforming power of the [Genesis Device](https://memory-alpha.fandom.com/wiki/Genesis_Device "Genesis Device on Memory Alpha") in*The Wrath of Khan*, Donald also doesnâ€™t believe in [human-caused climate change](http://www.cnn.com/2016/09/27/politics/donald-trump-climate-change-kellyanne-conway/ "Trump on climate change").
+2. Donald is obviously a real-life [Talaxian](https://memory-alpha.fandom.com/wiki/Talaxian "Talaxians on Memory Alpha").
 3. The [crew of the original series](https://en.wikipedia.org/wiki/Pavel_Chekov "Pavel Checkov on Wikipedia") envisioned an end to conflict between nations, including the long time grudge between the US and Russia. [Donald gets along well with Russians](https://www.washingtonpost.com/blogs/right-turn/wp/2016/09/26/trumps-russia-problem/?utm_term=.8570d16f7e4b "Trump's Russia Problem").
 4. Like James T. Kirk, Donald will bravely sleep with any female he encounters, [no matter the risk](http://www.usmagazine.com/celebrity-news/news/donald-trump-calls-sleeping-around-as-his-personal-vietnam-w432176 "Sleeping around is Trump's Vietnam").
-5. Mike Pence is clearly a real-life [Cardassian](https://web.archive.org/web/20180902071808/http://memory-alpha.wikia.com/wiki/Cardassian "Cardassians on Memory Alpha").
+5. Mike Pence is clearly a real-life [Cardassian](https://memory-alpha.fandom.com/wiki/Cardassian "Cardassians on Memory Alpha").
 6. Like [Captain Jean-Luc Picard](https://www.youtube.com/watch?v=OAqsU-BY58w "Shut up, Wesley!"), Donald does not always see eye-to-eye with [Wil Wheaton/Wesley Crusher](http://wilwheaton.net/2016/07/some-thoughts-on-the-election/ "Wil Wheaton's thoughts on the election").
-7. Like [Klingons](https://web.archive.org/web/20180902071808/http://memory-alpha.wikia.com/wiki/Klingon "Klingons on Memory Alpha"), [Donald is very xenophobic](https://web.archive.org/web/20180902071808/https://www.washingtonpost.com/opinions/trump-reverts-to-his-xenophobic-self/2016/08/31/03a0ed6c-6fc8-11e6-9705-23e51a2f424d_story.html?utm_term=.0ad2a95300c3 "Trump reverts to xenophobia").
-8. Like the [Borg](https://web.archive.org/web/20180902071808/http://memory-alpha.wikia.com/wiki/Borg "The Borg on Memory Alpha"), [Donald does not believe in diversity](http://www.cnn.com/2016/07/24/politics/donald-trump-muslim-ban-election-2016/ "Trump wants to ban Muslims").
-9. Like [the Ferengi](https://web.archive.org/web/20180902071808/http://memory-alpha.wikia.com/wiki/Ferengi "Ferengi on Memory Alpha"), [profit is everything to Donald](https://web.archive.org/web/20180902071808/http://money.cnn.com/2016/03/16/news/companies/donald-trump-ethics/ "Trump ethics").
+7. Like [Klingons](https://memory-alpha.fandom.com/wiki/Klingon "Klingons on Memory Alpha"), [Donald is very xenophobic](https://www.washingtonpost.com/opinions/trump-reverts-to-his-xenophobic-self/2016/08/31/03a0ed6c-6fc8-11e6-9705-23e51a2f424d_story.html?utm_term=.0ad2a95300c3 "Trump reverts to xenophobia").
+8. Like the [Borg](https://memory-alpha.fandom.com/wiki/Borg "The Borg on Memory Alpha"), [Donald does not believe in diversity](http://www.cnn.com/2016/07/24/politics/donald-trump-muslim-ban-election-2016/ "Trump wants to ban Muslims").
+9. Like [the Ferengi](https://memory-alpha.fandom.com/wiki/Ferengi "Ferengi on Memory Alpha"), [profit is everything to Donald](https://web.archive.org/web/20180902071808/http://money.cnn.com/2016/03/16/news/companies/donald-trump-ethics/ "Trump ethics").
 10. Like William Shatner, Donald has an enormous ego.
 
 <img src="../../images/pence-cardassian-300x122.png" alt="pence-cardassian">
