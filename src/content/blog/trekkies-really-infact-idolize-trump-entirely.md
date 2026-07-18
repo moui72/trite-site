@@ -10,7 +10,7 @@ You may or may not have heard about the recent decision by a number of [members 
 
 Trump/Talaxian comparison
 
-1. Just as James T. Kirk once strove to prevent Khan from using the terraforming power of the [Genesis Device](https://memory-alpha.fandom.com/wiki/Genesis_Device "Genesis Device on Memory Alpha") in*The Wrath of Khan*, Donald also doesnâ€™t believe in [human-caused climate change](http://www.cnn.com/2016/09/27/politics/donald-trump-climate-change-kellyanne-conway/ "Trump on climate change").
+1. Just as James T. Kirk once strove to prevent Khan from using the terraforming power of the [Genesis Device](https://memory-alpha.fandom.com/wiki/Genesis_Device "Genesis Device on Memory Alpha") in*The Wrath of Khan*, Donald also doesn’t believe in [human-caused climate change](http://www.cnn.com/2016/09/27/politics/donald-trump-climate-change-kellyanne-conway/ "Trump on climate change").
 2. Donald is obviously a real-life [Talaxian](https://memory-alpha.fandom.com/wiki/Talaxian "Talaxians on Memory Alpha").
 3. The [crew of the original series](https://en.wikipedia.org/wiki/Pavel_Chekov "Pavel Checkov on Wikipedia") envisioned an end to conflict between nations, including the long time grudge between the US and Russia. [Donald gets along well with Russians](https://www.washingtonpost.com/blogs/right-turn/wp/2016/09/26/trumps-russia-problem/?utm_term=.8570d16f7e4b "Trump's Russia Problem").
 4. Like James T. Kirk, Donald will bravely sleep with any female he encounters, [no matter the risk](http://www.usmagazine.com/celebrity-news/news/donald-trump-calls-sleeping-around-as-his-personal-vietnam-w432176 "Sleeping around is Trump's Vietnam").

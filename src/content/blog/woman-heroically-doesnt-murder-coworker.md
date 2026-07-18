@@ -8,7 +8,7 @@ A young female professional has made history this week after she heroically refr
 
 As if this was not enough, the man then told her that she was beautiful no matter what she wore, as if his opinion was wanted and valid. Instead of slowly shaving the skin from his body with her dull scissors, she politely told him that he was an asshole and that he should leave, like a living saint.
 
-While she did smash his hand to a bloody pulp after he put it on in her knee and told her that negativity wasnâ€™t cute, the fact that he survived the encounter without further damage is testament to her incredible ability to turn the other cheek.
+While she did smash his hand to a bloody pulp after he put it on in her knee and told her that negativity wasn’t cute, the fact that he survived the encounter without further damage is testament to her incredible ability to turn the other cheek.
 
 0
 
