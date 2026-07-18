@@ -8,26 +8,23 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <BaseLayout title="Trite Site — the greatest website of all time">
-	<p class="scan-line">
-		<span class="dim">#</span> archive scan complete — <strong>{posts.length}</strong> dispatches recovered
-		from the 2018-08&ndash;12 Wayback snapshot. everything here is true, amazing, and fascinating.
-	</p>
-	<ul class="dispatch-list">
+	<ul class="front-page">
 		{
 			posts.map((post) => (
 				<li>
-					<a class="dispatch-row" href={`blog/${post.id}/`}>
-						<time class="mono" datetime={post.data.pubDate.toISOString()}>
-							{post.data.pubDate.toLocaleDateString('en-US', {
-								year: 'numeric',
-								month: '2-digit',
-								day: '2-digit',
-								timeZone: 'UTC',
-							})}
-						</time>
-						<span class="dispatch-title">{post.data.title}</span>
-						<span class="dispatch-tags mono">
-							{post.data.tags.slice(0, 3).map((tag) => <span>[{tag}]</span>)}
+					<a class="story" href={`blog/${post.id}/`}>
+						<span class="kicker mono">{post.data.tags[0] ?? 'DISPATCH'}</span>
+						<span class="headline">{post.data.title}</span>
+						<span class="dateline mono">
+							<time datetime={post.data.pubDate.toISOString()}>
+								{post.data.pubDate.toLocaleDateString('en-US', {
+									year: 'numeric',
+									month: 'long',
+									day: 'numeric',
+									timeZone: 'UTC',
+								})}
+							</time>
+							{post.data.tags.length > 1 && <span class="dateline-tags"> — {post.data.tags.slice(1).join(', ')}</span>}
 						</span>
 					</a>
 				</li>
@@ -37,82 +34,56 @@ const posts = (await getCollection('blog')).sort(
 </BaseLayout>
 
 <style>
-	.scan-line {
-		font-family: var(--font-mono);
-		font-size: 0.85rem;
-		color: var(--phosphor-dim);
-		margin: 0 0 2.5rem;
-		line-height: 1.7;
-	}
-
-	.scan-line .dim {
-		color: var(--dim);
-	}
-
-	.scan-line strong {
-		color: var(--signal);
-		font-weight: 700;
-	}
-
-	.dispatch-list {
+	.front-page {
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		border-top: 1px solid var(--panel);
+		border-top: 3px double var(--ink);
 	}
 
-	.dispatch-row {
-		display: grid;
-		grid-template-columns: 6.5rem 1fr;
-		gap: 0.25rem 1rem;
-		align-items: baseline;
-		padding: 0.85rem 0.75rem;
-		border-bottom: 1px solid var(--panel);
-		border-left: 3px solid transparent;
+	.story {
+		display: block;
+		padding: 1.4rem 0;
+		border-bottom: 1px solid var(--rule);
 		text-decoration: none;
 		color: inherit;
 	}
 
-	.dispatch-row:hover,
-	.dispatch-row:focus-visible {
-		background: var(--panel-soft);
-		border-left-color: var(--signal);
-	}
-
-	.dispatch-row time {
-		font-size: 0.78rem;
-		color: var(--phosphor-dim);
-	}
-
-	.dispatch-title {
-		grid-column: 2;
-		font-family: var(--font-serif);
-		font-weight: 600;
-		font-size: 1.15rem;
-		color: var(--phosphor);
-	}
-
-	.dispatch-row:hover .dispatch-title,
-	.dispatch-row:focus-visible .dispatch-title {
-		color: var(--signal);
-	}
-
-	.dispatch-tags {
-		grid-column: 2;
+	.kicker {
+		display: block;
 		font-size: 0.72rem;
-		color: var(--dim);
-		display: flex;
-		gap: 0.6rem;
-		flex-wrap: wrap;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.09em;
+		color: var(--stamp-dim);
+		margin-bottom: 0.35rem;
 	}
 
-	@media (max-width: 480px) {
-		.dispatch-row {
-			grid-template-columns: 1fr;
-		}
-		.dispatch-title,
-		.dispatch-tags {
-			grid-column: 1;
-		}
+	.headline {
+		display: block;
+		font-family: var(--font-display);
+		font-weight: 400;
+		font-size: clamp(1.4rem, 3.6vw, 1.75rem);
+		line-height: 1.12;
+		color: var(--ink);
+	}
+
+	.story:hover .headline,
+	.story:focus-visible .headline {
+		color: var(--stamp-dim);
+	}
+
+	.dateline {
+		display: block;
+		margin-top: 0.5rem;
+		font-size: 0.72rem;
+		color: var(--ink-soft);
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+	}
+
+	.dateline-tags {
+		text-transform: none;
+		letter-spacing: normal;
 	}
 </style>

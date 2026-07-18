@@ -2,10 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About — Trite Site">
-	<p class="cmd mono">$ cat about.md</p>
+<BaseLayout title="Masthead & Ethics — Trite Site">
 	<article class="prose">
-		<h1>About</h1>
+		<span class="kicker mono">Masthead &amp; Ethics</span>
+		<h1>About Trite Site</h1>
 		<h2>What is Trite Site?</h2>
 		<p>
 			Trite Site is the greatest website of all time. It is a gift to humanity from its staff.
@@ -21,19 +21,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		<h2>Trite Site is satirical, right?</h2>
 		<p>There is no greater satire than TRUTH.</p>
 	</article>
-	<p class="back mono"><a href="../">$ cd ..</a></p>
+	<p class="back mono"><a href="../">&larr; Back to the front page</a></p>
 </BaseLayout>
 
 <style>
-	.cmd {
-		font-size: 0.85rem;
-		color: var(--phosphor-dim);
-		margin: 0 0 1.75rem;
+	.kicker {
+		display: block;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.09em;
+		color: var(--stamp-dim);
+		margin-bottom: 0.5rem;
+	}
+
+	h1 {
+		margin-bottom: 1.5rem;
+		padding-bottom: 1.25rem;
+		border-bottom: 1px solid var(--rule);
 	}
 
 	.back {
 		margin-top: 2.5rem;
-		font-size: 0.9rem;
+		font-size: 0.85rem;
 	}
 
 	.back a {
