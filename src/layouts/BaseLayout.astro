@@ -1,4 +1,10 @@
 ---
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/700.css';
+import '@fontsource/newsreader/400.css';
+import '@fontsource/newsreader/400-italic.css';
+import '@fontsource/newsreader/600.css';
+
 interface Props {
 	title: string;
 	description?: string;
@@ -6,10 +12,6 @@ interface Props {
 
 const { title, description = 'Trite Site — the greatest website of all time.' } = Astro.props;
 
-// Relative path back to the site root from the current page, e.g. "" at "/",
-// "../" at "/about/", "../../" at "/blog/x/". Keeps every internal link
-// relative so the site works both under a subpath (github.io/trite-site/)
-// and at the eventual apex domain (trite.site/), with no base config needed.
 const depth = Astro.url.pathname.split('/').filter(Boolean).length;
 const root = '../'.repeat(depth);
 ---
@@ -25,33 +27,38 @@ const root = '../'.repeat(depth);
 		<title>{title}</title>
 	</head>
 	<body>
-		<header class="site-header">
-			<a class="brand" href={root || '.'}>Trite Site</a>
+		<div class="scanlines" aria-hidden="true"></div>
+		<header class="masthead">
+			<a class="prompt" href={root || '.'}>
+				<span class="prompt-user">trite</span><span class="prompt-at">@</span><span class="prompt-user">site</span><span class="prompt-dim">:~$</span>
+				<span class="prompt-cursor" aria-hidden="true"></span>
+			</a>
 			<nav>
-				<a href={root || '.'}>Home</a>
-				<a href={`${root}about/`}>About</a>
+				<a href={root || '.'}>home</a>
+				<a href={`${root}about/`}>about</a>
 			</nav>
 		</header>
 		<main>
 			<slot />
 		</main>
 		<footer class="site-footer">
-			<p>
-				Restored from the
-				<a href="https://web.archive.org/web/20180902000000*/trite.site" target="_blank" rel="noopener">Wayback Machine</a>
-				after the original content was lost. Not actually true. Probably.
-			</p>
+			<p><span class="dim">#</span> restored from the <a href="https://web.archive.org/web/20180902000000*/trite.site" target="_blank" rel="noopener">Wayback Machine</a> after the original transmission was lost. not actually true. probably.</p>
 		</footer>
 	</body>
 </html>
 
 <style is:global>
 	:root {
-		--ink: #1a1a1a;
-		--paper: #fdfaf3;
-		--accent: #b3401e;
-		--muted: #6b6459;
-		font-family: 'Georgia', 'Times New Roman', serif;
+		--void: #040f0f;
+		--panel: #2d3a3a;
+		--panel-soft: #16201f;
+		--dim: #248232;
+		--signal: #2ba84a;
+		--phosphor: #fcfffc;
+		--phosphor-dim: #b9c9c4;
+
+		--font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+		--font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
 	}
 
 	* {
@@ -65,76 +72,230 @@ const root = '../'.repeat(depth);
 	}
 
 	body {
-		background: var(--paper);
-		color: var(--ink);
+		background: var(--void);
+		color: var(--phosphor);
+		font-family: var(--font-serif);
 		line-height: 1.65;
+		font-size: 1.05rem;
 	}
 
-	.site-header {
+	/* faint CRT scanline texture, purely decorative */
+	.scanlines {
+		position: fixed;
+		inset: 0;
+		pointer-events: none;
+		z-index: 1;
+		background: repeating-linear-gradient(
+			to bottom,
+			rgba(252, 255, 252, 0.025) 0px,
+			rgba(252, 255, 252, 0.025) 1px,
+			transparent 1px,
+			transparent 3px
+		);
+		mix-blend-mode: overlay;
+	}
+
+	.masthead {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		justify-content: space-between;
-		max-width: 720px;
+		flex-wrap: wrap;
+		gap: 0.5rem 1.5rem;
+		max-width: 760px;
 		margin: 0 auto;
-		padding: 2rem 1.25rem 1rem;
-		border-bottom: 3px double var(--ink);
+		padding: 2rem 1.25rem 1.25rem;
+		border-bottom: 1px solid var(--dim);
 	}
 
-	.brand {
-		font-size: 1.75rem;
-		font-weight: bold;
-		letter-spacing: 0.02em;
-		color: var(--ink);
+	.prompt {
+		font-family: var(--font-mono);
+		font-weight: 700;
+		font-size: 1.1rem;
+		color: var(--phosphor);
 		text-decoration: none;
-		text-transform: uppercase;
+		letter-spacing: -0.01em;
+		display: inline-flex;
+		align-items: center;
 	}
 
-	.site-header nav a {
-		margin-left: 1.25rem;
-		color: var(--muted);
+	.prompt-user {
+		color: var(--signal);
+	}
+
+	.prompt-at {
+		color: var(--dim);
+	}
+
+	.prompt-dim {
+		color: var(--dim);
+		margin-right: 0.5ch;
+	}
+
+	.prompt-cursor {
+		display: inline-block;
+		width: 0.55ch;
+		height: 1.05em;
+		background: var(--signal);
+		margin-left: 0.15ch;
+		animation: blink 1.1s steps(1) infinite;
+	}
+
+	@keyframes blink {
+		0%,
+		49% {
+			opacity: 1;
+		}
+		50%,
+		100% {
+			opacity: 0;
+		}
+	}
+
+	.masthead nav {
+		font-family: var(--font-mono);
+		font-size: 0.85rem;
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.masthead nav a {
+		color: var(--phosphor-dim);
 		text-decoration: none;
-		font-size: 0.95rem;
 	}
 
-	.site-header nav a:hover {
-		color: var(--accent);
-		text-decoration: underline;
+	.masthead nav a::before {
+		content: '--';
+		color: var(--dim);
+	}
+
+	.masthead nav a:hover,
+	.masthead nav a:focus-visible {
+		color: var(--signal);
 	}
 
 	main {
-		max-width: 720px;
+		position: relative;
+		z-index: 2;
+		max-width: 760px;
 		margin: 0 auto;
-		padding: 2rem 1.25rem 4rem;
+		padding: 2.5rem 1.25rem 4rem;
 	}
 
 	a {
-		color: var(--accent);
+		color: var(--signal);
+		text-underline-offset: 0.15em;
+	}
+
+	a:hover {
+		text-decoration-thickness: 2px;
 	}
 
 	h1,
 	h2,
 	h3 {
+		font-family: var(--font-serif);
+		font-weight: 600;
 		line-height: 1.25;
+		text-wrap: balance;
+		color: var(--phosphor);
+	}
+
+	code,
+	.mono {
+		font-family: var(--font-mono);
 	}
 
 	img {
 		max-width: 100%;
 		height: auto;
+		border: 1px solid var(--dim);
+	}
+
+	.share {
+		margin-top: 2.5rem;
+		font-size: 0.78rem;
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		align-items: baseline;
+	}
+
+	.share .dim {
+		color: var(--dim);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.share a {
+		color: var(--phosphor-dim);
+		text-decoration: none;
+	}
+
+	.share a::before {
+		content: '[';
+		color: var(--dim);
+	}
+
+	.share a::after {
+		content: ']';
+		color: var(--dim);
+	}
+
+	.share a:hover,
+	.share a:focus-visible {
+		color: var(--signal);
 	}
 
 	blockquote {
-		border-left: 3px solid var(--accent);
+		border-left: 3px solid var(--signal);
 		margin-left: 0;
 		padding-left: 1rem;
-		color: var(--muted);
+		color: var(--phosphor-dim);
+	}
+
+	::selection {
+		background: var(--signal);
+		color: var(--void);
+	}
+
+	a:focus-visible,
+	button:focus-visible,
+	input:focus-visible {
+		outline: 2px solid var(--signal);
+		outline-offset: 3px;
 	}
 
 	.site-footer {
-		max-width: 720px;
+		position: relative;
+		z-index: 2;
+		max-width: 760px;
 		margin: 0 auto;
 		padding: 1.5rem 1.25rem 3rem;
-		color: var(--muted);
-		font-size: 0.85rem;
-		border-top: 1px solid #ddd6c7;
+		color: var(--phosphor-dim);
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		border-top: 1px solid var(--panel);
+	}
+
+	.site-footer .dim {
+		color: var(--dim);
+	}
+
+	.site-footer a {
+		color: var(--phosphor-dim);
+		text-decoration: underline;
+		text-decoration-color: var(--dim);
+	}
+
+	.site-footer a:hover {
+		color: var(--signal);
+		text-decoration-color: var(--signal);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.prompt-cursor {
+			animation: none;
+			opacity: 1;
+		}
 	}
 </style>
